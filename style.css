@@ -1,0 +1,572 @@
+/* ============================================
+   GOOGLE FONTS IMPORT
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* scroll-behavior belongs on html, not * — this is what enables smooth scrolling via CSS */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* ============================================
+   HEADER / NAVBAR
+   ============================================ */
+header {
+    background-color: #f0f0f0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 200px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    text-decoration: none;
+    color: #3a6cfa;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.navigation a {
+    color: #3a6cfa;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    padding-left: 25px;
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #601cfc;
+}
+
+/* Hamburger menu — hidden on desktop */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #3a6cfa;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+
+/* ============================================
+   SECTION BASE STYLES
+   ============================================ */
+section {
+    padding: 100px 200px;
+}
+
+
+/* ============================================
+   HERO / MAIN SECTION
+   ============================================ */
+.main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url('images/myPhoto.png') no-repeat;
+    background-size: contain;
+    background-position: right center;
+    background-attachment: fixed;
+    background-color: #4b2958;
+}
+
+.main h2 {
+    color: #fff;
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+.main h2 span {
+    display: inline-block;
+    margin-top: 10px;
+    color: #4e9eff;
+    font-size: 2.2em;
+    font-weight: 400;
+    /* min-height prevents layout jumping when text disappears during animation */
+    min-height: 1.3em;
+}
+
+.main h3 {
+    color: #fff;
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.main-btn {
+    color: #fff;
+    background-color: #3a6cfa;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 400;
+    display: inline-block;
+    padding: 0.9em 2.2em;
+    letter-spacing: 1px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.main-btn:hover {
+    background-color: #0a49f6;
+    transform: scale(1.08);
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.7em;
+    padding-right: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    color: #4e9eff;
+    transform: translateY(-3px);
+}
+
+
+/* ============================================
+   SHARED: TITLE & CONTENT
+   ============================================ */
+.title {
+    display: flex;
+    justify-content: center;
+    color: #3a6cfa;
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+/* ============================================
+   SERVICES — CARD STYLES
+   ============================================ */
+.card {
+    background-color: #fff;
+    width: 21.25em;
+    /* Fixed box-shadow syntax: use commas properly */
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 25px;
+    margin: 15px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.icon {
+    color: #3a6cfa;
+    font-size: 5em;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.info {
+    text-align: center;
+}
+
+.info h3 {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: 10px;
+    color: tomato;
+}
+
+
+/* ============================================
+   PROJECTS SECTION
+   ============================================ */
+.projects {
+    background-color: #4b2958;
+}
+
+/* Fix: title color on dark background */
+.projects .title {
+    color: #fff;
+}
+
+.projects .content {
+    margin-top: 30px;
+}
+
+.project-card {
+    background-color: #fff;
+    min-height: 14em;
+    width: 23em;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px;
+    /* Fixed: was "transform: scale(0.7s ease)" which is invalid */
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-image img {
+    width: 100%;
+    display: block;
+}
+
+.project-card:hover .project-image {
+    opacity: 0.9;
+}
+
+.project-info {
+    padding: 1em;
+}
+
+.project-category {
+    font-size: 0.85em;
+    color: #555;
+}
+
+.project-title {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+.more-details {
+    text-decoration: none;
+    color: #3a6cfa;
+    transition: color 0.3s ease;
+}
+
+.more-details:hover {
+    color: #601cfc;
+}
+
+
+/* ============================================
+   CERTIFICATES SECTION
+   ============================================ */
+.certificates {
+    background-color: #f9f9f9;
+}
+
+.cert-card {
+    background-color: #fff;
+    width: 22em;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.cert-card:hover {
+    transform: scale(1.05);
+}
+
+.cert-icon {
+    font-size: 4em;
+    color: #f4a423;
+    margin-bottom: 15px;
+}
+
+.cert-info h3 {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.cert-issuer {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.cert-date {
+    font-size: 0.85em;
+    color: #999;
+    margin-bottom: 12px;
+}
+
+.cert-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #fff;
+    background-color: #3a6cfa;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.cert-link:hover {
+    background-color: #601cfc;
+}
+
+
+/* ============================================
+   ARTICLES SECTION
+   ============================================ */
+.articles {
+    background-color: #4b2958;
+}
+
+/* Title on dark background */
+.articles .title {
+    color: #fff;
+}
+
+.article-card {
+    background-color: #fff;
+    width: 28em;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover {
+    transform: scale(1.03);
+}
+
+.article-info {
+    padding: 25px;
+}
+
+.article-tag {
+    background-color: #3a6cfa;
+    color: #fff;
+    font-size: 0.75em;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.article-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #222;
+    margin: 12px 0 8px;
+}
+
+.article-desc {
+    font-size: 0.88em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.article-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.article-date {
+    font-size: 0.82em;
+    color: #999;
+}
+
+.article-date i {
+    margin-right: 5px;
+}
+
+
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
+.cards-contact .icon {
+    font-size: 4.5em;
+}
+
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    background-color: #000016;
+    color: #fff;
+    padding: 2em 3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-title {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.footer-title span {
+    color: #3a6cfa;
+}
+
+
+/* ============================================
+   MEDIA QUERIES — RESPONSIVE DESIGN
+   ============================================ */
+
+/* TABLET: max 1024px */
+@media (max-width: 1024px) {
+    header {
+        padding: 12px 30px;
+    }
+
+    section {
+        padding: 80px 40px;
+    }
+
+    .title {
+        font-size: 1.8em;
+    }
+
+    .content {
+        flex-direction: row; /* Keep row layout on tablets */
+    }
+}
+
+/* MOBILE: max 768px */
+@media (max-width: 768px) {
+
+    /* Show hamburger, hide nav links by default */
+    .hamburger {
+        display: flex;
+    }
+
+    .navigation {
+        display: none; /* hidden by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background-color: #f0f0f0;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        z-index: 998;
+    }
+
+    /* When JS adds the "open" class, show the nav */
+    .navigation.open {
+        display: flex;
+    }
+
+    .navigation a {
+        padding: 12px 0;
+        font-size: 1.1em;
+        border-bottom: 1px solid #ddd;
+    }
+
+    header {
+        padding: 12px 20px;
+    }
+
+    section {
+        padding: 70px 20px;
+    }
+
+    .main h2 {
+        font-size: 1.1em;
+    }
+
+    .main h2 span {
+        font-size: 1.7em;
+    }
+
+    .main h3 {
+        font-size: 1.4em;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card,
+    .cert-card,
+    .article-card,
+    .project-card {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .title {
+        font-size: 1.6em;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 1.5em;
+    }
+}
+
+/* SMALL MOBILE: max 480px */
+@media (max-width: 480px) {
+    .main h2 {
+        font-size: 0.95em;
+    }
+
+    .main h2 span {
+        font-size: 1.5em;
+    }
+
+    .main h3 {
+        font-size: 1.1em;
+    }
+
+    .main-btn {
+        font-size: 0.9em;
+        padding: 0.7em 1.8em;
+    }
+
+    .logo {
+        font-size: 1.1em;
+    }
+}
